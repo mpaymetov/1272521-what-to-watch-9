@@ -1,19 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/app/app';
-
-const PromoFilm = {
-  TITLE: 'The Grand Budapest Hotel',
-  GENRE: 'Drama',
-  RELEASE: 2014,
-};
+import {PromoFilm} from './mock/mock';
 
 ReactDOM.render(
   <React.StrictMode>
     <App
-      title = {PromoFilm.TITLE}
-      genre = {PromoFilm.GENRE}
-      release = {PromoFilm.RELEASE}
+      title = {PromoFilm.title}
+      genre = {PromoFilm.genre}
+      release = {PromoFilm.release}
     />
   </React.StrictMode>,
   document.getElementById('root'));
