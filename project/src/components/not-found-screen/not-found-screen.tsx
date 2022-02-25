@@ -1,6 +1,6 @@
 import {Link} from 'react-router-dom';
 import Logo from '../logo/logo';
-import {LogoPosition} from '../../const';
+import {AppRoute, LogoPosition} from '../../const';
 import Footer from '../footer/footer';
 import User from '../user/user';
 
@@ -22,7 +22,7 @@ function NotFoundScreen(): JSX.Element {
 
       <div className="page-content">
         <section className="catalog">
-          <Link className="catalog__title" to="/">Вернуться на главную</Link>
+          <Link to={AppRoute.Root} className="catalog__title">Вернуться на главную</Link>
         </section>
 
         <Footer />

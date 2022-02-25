@@ -3,6 +3,7 @@ import Footer from '../footer/footer';
 import {LogoPosition} from '../../const';
 import User from '../user/user';
 import {Link} from 'react-router-dom';
+import {AppRoute} from '../../const';
 
 function FilmDetailScreen(): JSX.Element {
   return (
@@ -42,7 +43,7 @@ function FilmDetailScreen(): JSX.Element {
                   </svg>
                   <span>My list</span>
                 </button>
-                <Link to="/films/12/review" className="btn film-card__button">Add review</Link>
+                <Link to={AppRoute.AddReview} className="btn film-card__button">Add review</Link>
               </div>
             </div>
           </div>
