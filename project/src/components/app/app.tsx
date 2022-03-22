@@ -9,14 +9,20 @@ import FilmDetailScreen from '../film-detail-screen/film-detail-screen';
 import AddReviewScreen from '../add-review-screen/add-review-screen';
 import NotFoundScreen from '../not-found-screen/not-found-screen';
 import PrivateRoute from '../private-route/private-route';
+import {Film} from '../../types/film';
+import {Review} from '../../types/review';
 
 type AppScreenProps = {
-  title: string,
-  genre: string,
-  release: number,
+  promoFilm: {
+    title: string,
+    genre: string,
+    release: number,
+  };
+  films: Film[];
+  reviews: Review[];
 }
 
-function App({title, genre, release}: AppScreenProps): JSX.Element {
+function App({promoFilm, films, reviews}: AppScreenProps): JSX.Element {
   return (
     <BrowserRouter>
       <Routes>
@@ -24,9 +30,8 @@ function App({title, genre, release}: AppScreenProps): JSX.Element {
           path={AppRoute.Root}
           element={
             <MainScreen
-              title = {title}
-              genre = {genre}
-              release = {release}
+              promoFilm={promoFilm}
+              films={films}
             />
           }
         />

@@ -2,13 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/app/app';
 import {movies} from './mock/mock';
+import {films} from './mock/films';
+import {reviews} from './mock/reviews';
 
 ReactDOM.render(
   <React.StrictMode>
     <App
-      title = {movies[0].title}
-      genre = {movies[0].genre}
-      release = {movies[0].release}
+      promoFilm = {movies[0]}
+      films = {films}
+      reviews = {reviews}
     />
   </React.StrictMode>,
   document.getElementById('root'));

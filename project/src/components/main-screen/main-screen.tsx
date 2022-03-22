@@ -3,14 +3,18 @@ import Logo from '../logo/logo';
 import {LogoPosition} from '../../const';
 import Footer from '../footer/footer';
 import User from '../user/user';
+import {Film} from '../../types/film';
 
 type MainScreenProps = {
-  title: string,
-  genre: string,
-  release: number,
+  promoFilm: {
+    title: string,
+    genre: string,
+    release: number,
+  };
+  films: Film[],
 }
 
-function MainScreen({title, genre, release}: MainScreenProps): JSX.Element {
+function MainScreen({promoFilm, films}: MainScreenProps): JSX.Element {
   return (
     <>
       <section className="film-card">
@@ -33,10 +37,10 @@ function MainScreen({title, genre, release}: MainScreenProps): JSX.Element {
             </div>
 
             <div className="film-card__desc">
-              <h2 className="film-card__title">{title}</h2>
+              <h2 className="film-card__title">{promoFilm.title}</h2>
               <p className="film-card__meta">
-                <span className="film-card__genre">{genre}</span>
-                <span className="film-card__year">{release}</span>
+                <span className="film-card__genre">{promoFilm.genre}</span>
+                <span className="film-card__year">{promoFilm.release}</span>
               </p>
 
               <div className="film-card__buttons">
